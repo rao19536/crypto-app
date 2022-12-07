@@ -13,5 +13,4 @@ const SearchComponent = ({placeholder, handleSearch}) => {
     />
   )
 }
-
 export default SearchComponent

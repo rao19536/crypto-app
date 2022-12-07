@@ -12,6 +12,7 @@ const CryptoContainer = () => {
     const {data, error, isLoading} = useQuery(['cryptoApi'], ()=>getRequestFunc('https://api.coingecko.com/api/v3/coins/markets?vs_currency=INR&order=market_cap_desc&per_page=100&page=1&sparkline=false'));
     if (error) return <div>Request Failed</div>
 	if (isLoading) return <SpinnerComponent />
+    
     const handleSearch = (data) => {
         setName(data.toLowerCase())
     }
@@ -21,7 +22,7 @@ const CryptoContainer = () => {
 
     return (
     <ParentComponent>
-        <Style.StyledContainer>
+       <Style.StyledContainer>
             <Style.StyledSearchContainer>
                 <SearchComponent
                     placeholder="Search Coin"
@@ -31,7 +32,7 @@ const CryptoContainer = () => {
             <TableComponent
                 data={filteredUsers}
             />
-        </Style.StyledContainer>
+       </Style.StyledContainer>
     </ParentComponent>
     
   )
